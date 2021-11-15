@@ -1,0 +1,16 @@
+FROM ubuntu
+
+MAINTAINER Riya
+
+LABEL Remarks="This is a dockerfile to deploy a static website to nginx server."
+
+RUN apt-get update && apt-get install -y nginx && rm /etc/nginx/sites-available/* && rm /etc/nginx/sites-enabled/* && rm /var/www/html/*
+
+COPY nginx.conf /etc/nginx/conf.d 
+
+COPY index.html /var/www/html
+
+RUN apt-get update 
+
+EXPOSE 80
+
