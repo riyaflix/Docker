@@ -1,0 +1,9 @@
+FROM alpine
+
+MAINTAINER Riya
+
+WORKDIR /home/knoldus/docker
+
+RUN apk add curl
+
+CMD ["Hello from your first container"]
